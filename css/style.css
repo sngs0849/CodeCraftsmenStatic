@@ -209,3 +209,33 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 @media (max-width: 580px) {
     .service-grid-four { grid-template-columns: 1fr; }
 }
+
+/* Fix for Rectangular Logo */
+.logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    text-decoration: none; 
+    font-size: 1.6rem; 
+    font-weight: 700;
+}
+
+.logo img { 
+    height: 48px;      /* Fixed height to align with text */
+    width: auto;       /* Key: Prevents rectangular logo from being squashed */
+    display: block; 
+    object-fit: contain; /* Ensures entire logo is visible without cropping */
+}
+
+/* Visibility Fixes for Logo Text and Nav Links */
+header .logo span, 
+header .nav-links a {
+    color: var(--light-text-color);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+header.scrolled-header .logo span, 
+header.scrolled-header .nav-links a {
+    color: var(--secondary-color);
+    text-shadow: none;
+}
